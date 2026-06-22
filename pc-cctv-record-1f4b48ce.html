@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>简明指南 · 世界杯观赛随记</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Noto Sans', Helvetica, Arial, sans-serif;
+            background: linear-gradient(145deg, #f9e3be 0%, #f5d3a8 40%, #efc48c 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem 1rem;
+            line-height: 1.7;
+            color: #2f2b28;
+        }
+
+        .card {
+            max-width: 800px;
+            width: 100%;
+            background: white;
+            border-radius: 36px;
+            box-shadow: 0 20px 40px rgba(150, 100, 40, 0.15), 0 8px 20px rgba(0,0,0,0.05);
+            padding: 2.8rem 2.8rem 2.5rem;
+            transition: box-shadow 0.2s ease;
+            backdrop-filter: blur(2px);
+        }
+
+        @media (max-width: 600px) {
+            .card {
+                padding: 2rem 1.3rem 1.8rem;
+                border-radius: 28px;
+            }
+        }
+
+        h1 {
+            font-size: 2.4rem;
+            font-weight: 550;
+            letter-spacing: -0.01em;
+            color: #3a2e24;
+            margin-bottom: 0.4rem;
+            line-height: 1.2;
+            border-left: 6px solid #d9a066;
+            padding-left: 1.2rem;
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 1.9rem;
+                padding-left: 0.9rem;
+            }
+        }
+
+        .subhead {
+            font-size: 1.1rem;
+            color: #6b5b4b;
+            margin-bottom: 1.8rem;
+            margin-top: 0.2rem;
+            padding-left: 1.8rem;
+            border-left: 2px solid #e7cfb0;
+            font-weight: 380;
+        }
+
+        .intro {
+            font-size: 1.05rem;
+            background: #fff8f0;
+            padding: 1.2rem 1.6rem;
+            border-radius: 24px;
+            margin-bottom: 1.8rem;
+            color: #3d352e;
+            border: 1px solid #f0ddc5;
+            box-shadow: inset 0 1px 4px rgba(255, 245, 230, 0.6);
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
+            word-break: break-word;
+        }
+
+        .highlight {
+            background: #fbeedb;
+            padding: 0.2rem 0.5rem;
+            border-radius: 12px;
+            font-weight: 440;
+        }
+
+        .quote-block {
+            background: #f8f0e4;
+            border-radius: 24px;
+            padding: 1.2rem 1.8rem;
+            margin: 1.8rem 0 2rem;
+            border-left: 5px solid #d9a066;
+            font-style: normal;
+            box-shadow: 0 2px 6px rgba(190, 140, 70, 0.08);
+        }
+
+        .quote-block p {
+            margin-bottom: 0.2rem;
+        }
+
+        .quote-block .source {
+            margin-top: 0.5rem;
+            font-size: 0.9rem;
+            color: #7a6957;
+            text-align: right;
+            border-top: 1px dashed #ddc7ae;
+            padding-top: 0.5rem;
+        }
+
+        .btn-link {
+            display: inline-block;
+            background: #d9a066;
+            color: white !important;
+            text-decoration: none;
+            padding: 0.7rem 2rem;
+            border-radius: 60px;
+            font-weight: 510;
+            font-size: 1.05rem;
+            letter-spacing: 0.02em;
+            transition: background 0.2s, transform 0.1s;
+            box-shadow: 0 6px 14px rgba(190, 130, 50, 0.25);
+            border: none;
+            margin: 0.3rem 0 0.5rem;
+        }
+
+        .btn-link:hover {
+            background: #c78a4c;
+            transform: scale(1.02);
+            box-shadow: 0 8px 18px rgba(170, 110, 40, 0.3);
+        }
+
+        .btn-link:active {
+            transform: scale(0.97);
+        }
+
+        .inline-link {
+            color: #9a6d3c;
+            text-decoration: none;
+            font-weight: 490;
+            border-bottom: 2px solid #ecd6bb;
+            transition: border-color 0.15s, color 0.15s;
+        }
+
+        .inline-link:hover {
+            border-bottom-color: #a87845;
+            color: #7f5832;
+        }
+
+        .faq-mini {
+            margin-top: 2.2rem;
+            padding-top: 1.5rem;
+            border-top: 2px solid #efe1d0;
+        }
+
+        .faq-mini h3 {
+            font-size: 1.15rem;
+            font-weight: 520;
+            color: #42372e;
+            margin-bottom: 0.8rem;
+            letter-spacing: 0.01em;
+        }
+
+        .faq-item {
+            display: flex;
+            gap: 0.8rem;
+            margin-bottom: 0.75rem;
+            align-items: baseline;
+        }
+
+        .faq-q {
+            font-weight: 510;
+            color: #5d4b38;
+            background: #f7ede1;
+            padding: 0.1rem 0.8rem;
+            border-radius: 40px;
+            font-size: 0.9rem;
+            white-space: nowrap;
+        }
+
+        .faq-a {
+            color: #3a332d;
+            font-size: 0.98rem;
+            line-height: 1.5;
+        }
+
+        .footer-note {
+            margin-top: 2.5rem;
+            font-size: 0.85rem;
+            color: #7f6d5b;
+            text-align: center;
+            border-top: 1px solid #ebdccd;
+            padding-top: 1.2rem;
+        }
+
+        a {
+            color: inherit;
+        }
+
+        strong {
+            font-weight: 550;
+            color: #423123;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>世界杯观赛 · 简明指南</h1>
+        <div class="subhead">几段笔记，一点提醒，关于如何在数字世界里与世界杯保持连接。</div>
+
+        <div class="intro">
+            ⚽ 四年一度的盛事，屏幕前的等待与呐喊。这篇不是教程，更像一份温和的备忘录——帮你理清从哪里找直播、怎样避开迷路，以及一些值得留意的细节。
+        </div>
+
+        <p>
+            每届世界杯开打，身边总有朋友突然问：「现在比赛在哪里看？哪个平台能回放？」其实答案每年都有些变动，但核心逻辑没变：找一个稳定的入口，比收藏一堆链接更管用。如果你想要一个直接而干净的起点，可以记住这个地址——<a href="https://pc-cctv-sjb.com" class="inline-link">世界杯</a>——它像一本随身携带的节目单，没有多余装饰，适合快速确认赛程与直播流向。
+        </p>
+
+        <p>
+            很多人习惯在社交网络上刷进球集锦，但真正看直播时，卡顿、延迟或是链接失效很破坏心情。我的建议是：<span class="highlight">开赛前半小时做一次链路测试</span>，点开页面确保画面流畅，顺便把音量、弹幕开关都调好。别等到进球前五分钟才手忙脚乱。
+        </p>
+
+        <div class="quote-block">
+            <p>“每次大赛前我总会花十分钟整理观赛入口，后来发现真正重要的不是收藏了多少地址，而是找到一个你信得过的、每次都能打开的地方。世界杯理应被好好观看，而不是被搜索消磨掉热情。”</p>
+            <div class="source">—— 一位连续看了五届世界杯的朋友</div>
+        </div>
+
+        <p>
+            另外，留意一下时差。如果比赛在凌晨三点，提前备好一杯水、调暗屏幕亮度，或者干脆录下来早上再看——别让胜负影响睡眠。真正的球迷懂得享受过程，而不是熬坏自己。
+        </p>
+
+        <p>
+            至于回放与集锦，很多平台都会在赛后迅速更新。但请尽量选择官方或信誉较好的来源，减少点进奇怪广告页面的机会。保持一点耐心，好内容值得等上几分钟。
+        </p>
+
+        <p style="margin-top: 1.8rem;">
+            最后，也是最重要的一条：不要点击任何声称「免费高清·无延迟·内部通道」的陌生链接。骗局总爱披着世界杯的外衣。认准你熟悉的入口即可，比如前面提到的那个——<a href="https://pc-cctv-sjb.com" class="inline-link">世界杯</a>，清晰直接，不带诱导。
+        </p>
+
+        <div style="text-align: center; margin: 2rem 0 0.8rem;">
+            <a href="https://pc-cctv-sjb.com" class="btn-link">世界杯</a>
+            <div style="font-size: 0.8rem; color: #907b66; margin-top: 0.5rem;">一个直接、干净的起点</div>
+        </div>
+
+        <div class="faq-mini">
+            <h3>⚡ 常常被问到的几件事</h3>
+            <div class="faq-item">
+                <span class="faq-q">需要注册吗？</span>
+                <span class="faq-a">大多数情况下，直接打开页面就能看到赛程与直播入口，不需要提前注册。</span>
+            </div>
+            <div class="faq-item">
+                <span class="faq-q">手机能看吗？</span>
+                <span class="faq-a">可以。不过部分页面在手机浏览器上布局会简化，建议横屏或使用桌面模式。</span>
+            </div>
+            <div class="faq-item">
+                <span class="faq-q">有回放吗？</span>
+                <span class="faq-a">比赛结束后几小时内通常会上架回放视频，具体看页面内的导航标签。</span>
+            </div>
+            <div class="faq-item">
+                <span class="faq-q">为什么我打不开？</span>
+                <span class="faq-a">检查一下网络连接，或者换个浏览器试试。也可能当时访问量较大，稍等片刻再刷新。</span>
+            </div>
+        </div>
+
+        <div class="footer-note">
+            <span>⚽ 祝你看球愉快，也别忘了好好休息 · 世界杯 </span>
+        </div>
+    </div>
+</body>
+</html>
